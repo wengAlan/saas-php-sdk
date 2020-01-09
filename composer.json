@@ -1,0 +1,23 @@
+{
+    "name": "saas-php-sdk",
+    "description": "PHP SDK for ZAKER COS",
+    "keywords": [
+        "ZAKER", "php"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alan",
+            "email": "wengyuubin@myzaker.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"ZkSass\\": "src/saas"},
+        "files": ["src/Saas/functions.php"]
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "guzzlehttp/guzzle": "~6.3",
+	    "guzzlehttp/guzzle-services": "~1.1"
+    }
+}
