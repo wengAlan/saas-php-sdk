@@ -5,14 +5,14 @@
 
 ## 运行环境
 
-| Qiniu SDK版本 | PHP 版本 |
+| Saas SDK版本 | PHP 版本 |
 |:--------------------:|:---------------------------:|
 |          7.x         |  cURL extension,   5.3 - 5.6,7.0 |
 |          6.x         |  cURL extension,   5.2 - 5.6 |
 
 ## 使用方法
 
-
+详情见[Wiki文档](https://github.com/wengAlan/saas-php-sdk/wiki)
 ## 代码许可
-
+The MIT License (MIT).详情见 [License文件](https://github.com/wengAlan/saas-php-sdk/blob/master/LICENSE).
 
