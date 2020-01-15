@@ -21,7 +21,7 @@ final class Baidu{
             'get_applets_info_url'              =>  'https://openapi.baidu.com/rest/2.0/smartapp/app/info',
             'upload_applets_url'                =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/upload',
             'submit_audit_applets_url'          =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/submitaudit',
-            'release_url'                       =>  'https://api.weixin.qq.com/wxa/release',
+            'release_url'                       =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/release',
             'rollback_url'                      =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/rollback',
             'withdraw_url'                      =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/withdraw',
             'get_package_list_url'              =>  'https://openapi.baidu.com/rest/2.0/smartapp/package/get',
@@ -35,6 +35,7 @@ final class Baidu{
             'set_applet_webview_domain_url'     =>  'https://openapi.baidu.com/rest/2.0/smartapp/app/modifywebviewdomain',
             'set_platform_service_domain_url'   =>  'https://openapi.baidu.com/rest/2.0/smartapp/tp/modifydomain',
             'set_platform_webview_domain_url'   =>  'https://openapi.baidu.com/rest/2.0/smartapp/tp/modifywebviewdomain',
+            'set_applet_support_version_url'    =>  'https://openapi.baidu.com/rest/2.0/smartapp/app/setsupportversion',
         );
     }
 }

@@ -294,14 +294,14 @@ final class BaiduOpen
     {
          //获取url
          $config_key                   = 'rollback_url';
-         $release_url                 = Config::getConfigByKey(Config::BADI_CONFING_NAME,$config_key);
+         $rollback_url                 = Config::getConfigByKey(Config::BADI_CONFING_NAME,$config_key);
          $params              = array(
             'access_token'       =>  $access_token,
             'package_id'         =>  $package_id,
          );
-         $response  = Client::post($release_url,$params);
+         $response  = Client::post($rollback_url,$params);
          if (!$response->ok()) {
-             return array(null, new Error($release_url, $response));
+             return array(null, new Error($rollback_url, $response));
          }
          //格式化输出百度或者微信数据
         list($errno,$msg,$json_data) = Format::getFormatData($response->json(),'rollback',Format::BADI_FORMAT_NAME);
@@ -642,8 +642,6 @@ final class BaiduOpen
         if(!empty($upload_domain_list)){
             $params['upload_domain']  = implode(',',$upload_domain_list);
         }
-        var_dump($set_platform_service_domain_url);
-        var_dump($params);
         $response  = Client::post($set_platform_service_domain_url,$params);
         if (!$response->ok()) {
              return array(null, new Error($set_platform_service_domain_url, $response));
@@ -684,6 +682,33 @@ final class BaiduOpen
        //格式化输出百度或者微信数据
        list($errno,$msg,$json_data) = Format::getFormatData($response->json(),'modify_platform_webview_domain',Format::BADI_FORMAT_NAME);
        return array($json_data,array('errno'=>$errno,'msg'=>$msg));
+    }
+
+    /**
+     * Undocumented function
+     *
+     * @param [type] $access_token
+     * @param [type] $version
+     * @return void
+     */
+    public static function set_support_version ($access_token,$version)
+    {
+         //获取url
+         $config_key                           = 'set_applet_support_version_url';
+         $set_applet_support_version_url      = Config::getConfigByKey(Config::BADI_CONFING_NAME,$config_key);
+         $params                      = array(
+             'access_token'           =>  $access_token,
+             'version'                =>  $version,
+         );
+       
+         $response  = Client::post($set_applet_support_version_url,$params);
+         if (!$response->ok()) {
+              return array(null, new Error($set_applet_support_version_url, $response));
+          }
+ 
+        //格式化输出百度或者微信数据
+        list($errno,$msg,$json_data) = Format::getFormatData($response->json(),'set_support_version',Format::BADI_FORMAT_NAME);
+        return array($json_data,array('errno'=>$errno,'msg'=>$msg));
     }
 
 }

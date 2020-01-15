@@ -506,6 +506,27 @@ final class BaiduFormat{
         $msg     = isset($json_data['msg']) ? $json_data['msg'] : '请求数据失败';
         return array(  $errno, $msg ,$return_json_data);
     }
+    
+    /**
+     * Undocumented function
+     *
+     * @param [type] $json_data
+     * @return void
+     */
+    public static function set_support_version ($json_data = null)
+    {
+        list($result , $response_data) = self::check_response_data ( $json_data);
+        if (!$result)  return $response_data;
+        $return_json_data = array();
+        if($json_data['errno'] == 0  && $json_data['msg'] == 'success'){
+            $return_json_data = array(
+                'result'        =>  true,
+            );
+        }
+        $errno   = isset($json_data['errno']) ? $json_data['errno'] : '90000';
+        $msg     = isset($json_data['msg']) ? $json_data['msg'] : '请求数据失败';
+        return array(  $errno, $msg ,$return_json_data);
+    }
 
     /**
      * 检查参数

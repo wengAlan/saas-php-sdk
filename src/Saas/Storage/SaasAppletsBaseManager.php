@@ -243,4 +243,24 @@ final class SaasAppletsBaseManager
     }
 
 
+    /**
+     * Set Applets support version
+     *
+     * @param [string] $access_token
+     * @param [string] $version
+     * @return array
+     */
+    public function set_support_version ($access_token ,$version)
+    {
+        $classname = $this->class_name;
+        if(!class_exists($classname)){
+            return array(null, new Error('', 'Does not match the specified platform'));
+        }
+        
+        $result    = $classname::set_support_version( $access_token ,$version  );
+
+        return  $result;
+
+    }
+
 }

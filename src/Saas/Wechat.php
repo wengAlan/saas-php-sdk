@@ -27,7 +27,8 @@ final class Wechat{
             'get_del_template_url'          =>  'https://api.weixin.qq.com/wxa/deletetemplate',
             'get_draft_list_url'            =>  'https://api.weixin.qq.com/wxa/gettemplatedraftlist',
             'get_add_draft_to_tmp_url'      =>  'https://api.weixin.qq.com/wxa/addtotemplate',
-        
+            'set_applet_support_version'    =>  'https://openapi.baidu.com/rest/2.0/smartapp/app/setsupportversion',
+
         );
     }
 }
